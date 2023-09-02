@@ -1,0 +1,28 @@
+{% load static %}
+
+<!doctype html>
+<html>
+  <head>
+    <title>{% block title %}Заголовок{% endblock %}</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <header>
+      <nav>
+        
+      </nav>
+    </header>
+    <main>
+      <div id='content'>
+        {% block content %}
+        Здесь кажется так пусто, мрачно и одиноко...
+        {% endblock %}
+      </div>
+    </main>
+    <footer>
+      Права не защищены
+    </footer>
+  </body>
+</html>
