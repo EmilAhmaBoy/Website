@@ -17,11 +17,16 @@
     <header>
       <nav>
         <ul>
-          <li><a href="{% url 'index' %}">Главная</a></li>
-          <li><a href="{% url 'index' %}">Информация</a></li>
-          <li><a href="{% url 'index' %}">Форум</a></li>
-          <li><a href="{% url 'index' %}">Войти</a></li>
-          <li><a href="{% url 'index' %}">Регистрация</a></li>
+          {% url 'index' as url %}
+          <li><a href='{{ url }}' {% if request.path == url %}class='active'{% endif %}>Главная</a></li>
+          {% url 'info' as url %}
+          <li><a href='{{ url }}' {% if request.path == url %}class='active'{% endif %}>Информация</a></li>
+          {% url 'forum' as url %}
+          <li><a href='{{ url }}' {% if request.path == url %}class='active'{% endif %}>Форум</a></li>
+          {% url 'signin' as url %}
+          <li><a href='{{ url }}' {% if request.path == url %}class='active'{% endif %}>Вход</a></li>
+          {% url 'signup' as url %}
+          <li><a href='{{ url }}' {% if request.path == url %}class='active'{% endif %}>Регистрация</a></li>
         </ul>
       </nav>
     </header>
